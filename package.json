@@ -1,0 +1,19 @@
+{
+  "name": "first-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "node-red": {
+    "nodes": {
+      "first-node": "first-node.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^2.18.8"
+  }
+}

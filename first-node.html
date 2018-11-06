@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  RED.nodes.registerType('温湿度',{
+      category: '环境',
+      color: '#a6bbcf',
+      defaults: {
+          name: {value:""}
+      },
+      inputs:0,
+      outputs:1,
+      icon: "temp.png",
+      label: function() {
+          return this.name||"温湿度";
+      }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="温湿度">
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> 传感器</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="温湿度">
+  <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
