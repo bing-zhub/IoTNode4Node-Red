@@ -3,8 +3,9 @@
       category: '环境',
       color: '#a6bbcf',
       defaults: {
-          name: {value:""},
-          topic: {value: ""}
+          type: {value:""},
+          topic: {value: ""},
+          location: {value: ""}
       },
       inputs:0,
       outputs:1,
@@ -17,13 +18,17 @@
 
 <script type="text/x-red" data-template-name="温湿度">
   <div class="form-row">
-      <label for="node-input-name"><i class="icon-tag"></i> 传感器</label>
-      <input type="text" id="node-input-name" placeholder="传感器类型">
+      <label for="node-input-type"><i class="icon-tag"></i>传感器</label>
+      <input type="text" id="node-input-type" placeholder="传感器类型">
   </div>
   <div class="form-row">
-    <label for="node-input-topic"><i class="icon-tag"></i> 主题</label>
-    <input type="text" id="node-input-topic" placeholder="topic">
-</div>
+    <label for="node-input-location"><i class="icon-tag"></i>位置</label>
+    <input type="text" id="node-input-location" placeholder="传感器放置位置">
+  </div>
+  <div class="form-row">
+    <label for="node-input-topic"><i class="icon-tag"></i>主题</label>
+    <input type="text" id="node-input-topic" placeholder="主题">
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="温湿度">
