@@ -5,13 +5,14 @@ module.exports = function(RED) {
     var node = this;
     RED.nodes.createNode(node, config);
     var msg = {
-        payload: ""
+        payload: "",
+        topic: ""
     }
     var client  = mqtt.connect('mqtt://115.159.98.171:1883')
-
+    var topic = config.name || "Hello"
     client.on("connect", function(){
         node.log("尝试连接到服务器")
-        client.subscribe("hello", function(err){
+        client.subscribe(topic, function(err){
             if(err){
                 node.log("sth went wrong!", err)
                 console.log(err)
@@ -24,6 +25,7 @@ module.exports = function(RED) {
 
     client.on("message", function(topic, message){
         msg.payload = message.toString()
+        msg.topic = config.topic
         node.send(msg);
     })
 
