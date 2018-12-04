@@ -1,0 +1,73 @@
+<script type="text/javascript">
+  function mk_conf(NAME) {
+
+      var ICON = "camera.png";
+
+      var conf = {
+          category: 'dashboard',
+          color: 'rgb( 63, 173, 181)',
+          defaults: {
+              group: {type: 'ui_group', required:false},
+              name: {value: ''},
+              order: {value: 0},
+              stream:{value:""},
+              width: {
+                  value: 0,
+                  validate: function(v) {
+                      var valid = true
+                      var width = v||0;
+                      var currentGroup = $('#node-input-group').val()|| this.group;
+                      var groupNode = RED.nodes.node(currentGroup);
+                      valid = !groupNode || +width <= +groupNode.width;
+                      $("#node-input-size").toggleClass("input-error",!valid);
+                      return valid;
+                  }},
+              height: {value: 0}
+          },
+          inputs:0,
+          outputs:0,
+          icon: ICON,
+          paletteLabel: NAME,
+          label: function() { return this.name || NAME; },
+          oneditprepare: function() {
+              $("#node-input-size").elementSizer({
+                  width: "#node-input-width",
+                  height: "#node-input-height",
+                  group: "#node-input-group"
+              });
+          },
+          oneditsave: function() {
+          },
+          oneditresize: function(size) {
+          }
+      };
+      return conf;
+  };
+
+  RED.nodes.registerType('webcam', mk_conf('webcam'));
+</script>
+
+<script type="text/x-red" data-template-name="webcam">
+  <div class="form-row" id="template-row-group">
+      <label for="node-input-group"><i class="fa fa-table"></i> <span data-i18n="ui_list.label.group"></span></label>
+      <input type="text" id="node-input-group">
+  </div>
+  <div class="form-row" id="template-row-size">
+      <label><i class="fa fa-object-group"></i> Size</label>
+      <input type="hidden" id="node-input-width">
+      <input type="hidden" id="node-input-height">
+      <button class="editor-button" id="node-input-size"></button>
+  </div>
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-stream"><i class="fa fa-tag"></i>Stream地址</label>
+      <input type="text" id="node-input-stream">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="webcam">
+  <p>Stream地址示例: http://192.168.123.100:8080</p> 不要加入最后的'/'
+</script>
