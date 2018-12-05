@@ -3,11 +3,10 @@
       category: '俺',
       color: '#a6bbcf',
       defaults: {
-          a: {value:""},
-          b: {value:""},
-          c: {value:""},
-          d: {value:""},
-          e: {value:""}
+          x_axis: {value:""},
+          y_axis: {value:""},
+          z_axis: {value:""},
+          rotation: {value:""}
       },
       inputs:0,
       outputs:1,
@@ -20,25 +19,21 @@
 
 <script type="text/x-red" data-template-name="arm">
   <div class="form-row">
-      <label for="node-input-a"><i class="icon-tag"></i>a</label>
-      <input type="text" id="node-input-a" placeholder="a">
+      <label for="node-input-x_axis"><i class="icon-tag"></i>x轴</label>
+      <input type="text" id="node-input-x_axis" placeholder="200">
   </div>
   <div class="form-row">
-    <label for="node-input-b"><i class="icon-tag"></i>b</label>
-    <input type="text" id="node-input-b" placeholder="b">
+    <label for="node-input-y_axis"><i class="icon-tag"></i>y轴</label>
+    <input type="text" id="node-input-y_axis" placeholder="200">
   </div>  
   <div class="form-row">
-    <label for="node-input-c"><i class="icon-tag"></i>c</label>
-    <input type="text" id="node-input-c" placeholder="c">
+    <label for="node-input-z_axis"><i class="icon-tag"></i>z轴</label>
+    <input type="text" id="node-input-z_axis" placeholder="200">
   </div>  
   <div class="form-row">
-    <label for="node-input-d"><i class="icon-tag"></i>d</label>
-    <input type="text" id="node-input-d" placeholder="d">
+    <label for="node-input-rotation"><i class="icon-tag"></i>旋转</label>
+    <input type="text" id="node-input-rotation" placeholder="200">
   </div>  
-  <div class="form-row">
-    <label for="node-input-e"><i class="icon-tag"></i>e</label>
-    <input type="text" id="node-input-e" placeholder="e">
-  </div>
 </script>
 
 <script type="text/x-red" data-help-name="arm">
