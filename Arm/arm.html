@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  RED.nodes.registerType('arm',{
+      category: '俺',
+      color: '#a6bbcf',
+      defaults: {
+          a: {value:""},
+          b: {value:""},
+          c: {value:""},
+          d: {value:""},
+          e: {value:""}
+      },
+      inputs:0,
+      outputs:1,
+      icon: "arm.png",
+      label: function() {
+          return this.name||"机械臂";
+      }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="arm">
+  <div class="form-row">
+      <label for="node-input-a"><i class="icon-tag"></i>a</label>
+      <input type="text" id="node-input-a" placeholder="a">
+  </div>
+  <div class="form-row">
+    <label for="node-input-b"><i class="icon-tag"></i>b</label>
+    <input type="text" id="node-input-b" placeholder="b">
+  </div>  
+  <div class="form-row">
+    <label for="node-input-c"><i class="icon-tag"></i>c</label>
+    <input type="text" id="node-input-c" placeholder="c">
+  </div>  
+  <div class="form-row">
+    <label for="node-input-d"><i class="icon-tag"></i>d</label>
+    <input type="text" id="node-input-d" placeholder="d">
+  </div>  
+  <div class="form-row">
+    <label for="node-input-e"><i class="icon-tag"></i>e</label>
+    <input type="text" id="node-input-e" placeholder="e">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="arm">
+  <p>A node in working</p>
+</script>
