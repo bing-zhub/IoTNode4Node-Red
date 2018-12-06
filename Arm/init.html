@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType('arm',{
+  RED.nodes.registerType('init',{
       category: '俺',
       color: '#a6bbcf',
       defaults: {
@@ -12,12 +12,12 @@
       outputs:1,
       icon: "arm.png",
       label: function() {
-          return this.name||"机械臂";
+          return this.name||"初始化";
       }
   });
 </script>
 
-<script type="text/x-red" data-template-name="arm">
+<script type="text/x-red" data-template-name="init">
   <div class="form-row">
       <label for="node-input-x_axis"><i class="icon-tag"></i>x轴</label>
       <input type="text" id="node-input-x_axis" placeholder="200">
@@ -36,6 +36,6 @@
   </div>  
 </script>
 
-<script type="text/x-red" data-help-name="arm">
+<script type="text/x-red" data-help-name="init">
   <p>A node in working</p>
 </script>
