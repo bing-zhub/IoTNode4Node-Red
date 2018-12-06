@@ -3,7 +3,8 @@
       category: '俺',
       color: '#a6bbcf',
       defaults: {
-          i: {value:0}
+          i: {value:0},
+          name: {value:""}
       },
       inputs:1,
       outputs:0,
@@ -16,14 +17,18 @@
 
 <script type="text/x-red" data-template-name="joint">
   <div class="form-row">
-      <label for="node-input-i"><i class="icon-tag"></i>x轴</label>
+    <label for="node-input-name"><i class="icon-tag"></i>name</label>
+    <input type="text" id="node-input-name" placeholder="200">
+  </div>
+  <div class="form-row">
+      <label for="node-input-i"><i class="icon-tag"></i>joint</label>
       <select id="node-input-i">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="4">5</option>
+        <option value="5">6</option>
       </select>
   </div> 
 </script>

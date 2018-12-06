@@ -9,7 +9,8 @@
           joint4: {value:0},
           joint5: {value:0},
           joint6: {value:0},
-          pump: {value:false}
+          pump: {value:false},
+          name: {value:""}
       },
       inputs:1,
       outputs:1,
@@ -21,6 +22,10 @@
 </script>
 
 <script type="text/x-red" data-template-name="arm">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>name</label>
+    <input type="text" id="node-input-name" placeholder="200">
+  </div> 
   <div class="form-row">
       <label for="node-input-joint1"><i class="icon-tag"></i>joint1</label>
       <input type="text" id="node-input-joint1" placeholder="200">
@@ -51,7 +56,7 @@
       <option value="true">true</option>
       <option value="false">false</option>
     </select>
-</div> 
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="arm">
