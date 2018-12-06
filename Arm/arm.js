@@ -20,8 +20,8 @@ module.exports = function(RED) {
     }
 
     function dropConnection(){
-        for(var i =0; i < 7; i++){
-            sensors[i].close();
+        for(var i =0; i < 6; i++){
+            joints[i].close();
         }
     }
 
@@ -35,24 +35,38 @@ module.exports = function(RED) {
     }
     
     function armControl(joints, msg){
-        for(var i = 0; i <7; i++){
-            joints[i].emit("angle",msg.payload.joints[i]);
+        for(var i = 0; i <6; i++){
+            var n = parseInt(msg.payload.joints[i])
+            joints[i].emit("angle",n);
         }
-        togglePump(msg.payload.pump)
+        pump = msg.payload.pump==="true"?true:false;
+        togglePump(pump)
     }
 
     function ARM(config) {
         var node = this;
-        RED.nodes.createNode(node, config);        
-
+        RED.nodes.createNode(node, config);    
+        joint1 = config.joint1
+        joint2 = config.joint2
+        joint3 = config.joint3
+        joint4 = config.joint4
+        joint5 = config.joint5
+        joint6 = config.joint6
+        msg = {
+            payload: {
+                joints: [joint1, joint2, joint3, joint4, joint5, joint6],
+                pump: config.pump
+            }
+        }
+        console.log(msg)    
         var joints = createJoints();
         var sensors = createSensors();
-        node.on('input', function(msg){
-            console.log(msg);
-            armControl(joints, msg);        
+        node.on('input', function(){
+            armControl(joints, msg);
+            node.send(msg)
         })
         node.on('close', function(){
-        
+            dropConnection()
         })
     }
     RED.nodes.registerType("arm",ARM);

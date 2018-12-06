@@ -7,7 +7,6 @@ module.exports = function(RED) {
         RED.nodes.createNode(node, config);        
         var joint_socket = io('http://127.0.0.1:1998/api/robots/7bot/devices/joint'+i);
         node.on('input', function(msg){
-          
           joint_socket.emit('angle', msg.payload);       
         })
         node.on('close', function(){

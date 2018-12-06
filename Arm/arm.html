@@ -3,10 +3,13 @@
       category: '俺',
       color: '#a6bbcf',
       defaults: {
-          x_axis: {value:0},
-          y_axis: {value:0},
-          z_axis: {value:0},
-          rotation: {value:0}
+          joint1: {value:0},
+          joint2: {value:0},
+          joint3: {value:0},
+          joint4: {value:0},
+          joint5: {value:0},
+          joint6: {value:0},
+          pump: {value:false}
       },
       inputs:1,
       outputs:1,
@@ -19,21 +22,36 @@
 
 <script type="text/x-red" data-template-name="arm">
   <div class="form-row">
-      <label for="node-input-x_axis"><i class="icon-tag"></i>x轴</label>
-      <input type="text" id="node-input-x_axis" placeholder="200">
+      <label for="node-input-joint1"><i class="icon-tag"></i>joint1</label>
+      <input type="text" id="node-input-joint1" placeholder="200">
+  </div> 
+  <div class="form-row">
+    <label for="node-input-joint2"><i class="icon-tag"></i>joint2</label>
+    <input type="text" id="node-input-joint2" placeholder="200">
   </div>
   <div class="form-row">
-    <label for="node-input-y_axis"><i class="icon-tag"></i>y轴</label>
-    <input type="text" id="node-input-y_axis" placeholder="200">
-  </div>  
+    <label for="node-input-joint3"><i class="icon-tag"></i>joint3</label>
+    <input type="text" id="node-input-joint3" placeholder="200">
+  </div>
   <div class="form-row">
-    <label for="node-input-z_axis"><i class="icon-tag"></i>z轴</label>
-    <input type="text" id="node-input-z_axis" placeholder="200">
-  </div>  
+    <label for="node-input-joint4"><i class="icon-tag"></i>joint4</label>
+    <input type="text" id="node-input-joint4" placeholder="200">
+  </div>
   <div class="form-row">
-    <label for="node-input-rotation"><i class="icon-tag"></i>旋转</label>
-    <input type="text" id="node-input-rotation" placeholder="200">
-  </div>  
+    <label for="node-input-joint5"><i class="icon-tag"></i>joint5</label>
+    <input type="text" id="node-input-joint5" placeholder="200">
+  </div>
+  <div class="form-row">
+    <label for="node-input-joint6"><i class="icon-tag"></i>joint6</label>
+    <input type="text" id="node-input-joint6" placeholder="200">
+  </div>
+  <div class="form-row">
+    <label for="node-input-pump"><i class="icon-tag"></i>pump</label>
+    <select id="node-input-pump">
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
+</div> 
 </script>
 
 <script type="text/x-red" data-help-name="arm">

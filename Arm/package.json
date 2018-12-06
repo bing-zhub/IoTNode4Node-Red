@@ -18,7 +18,6 @@
   "license": "ISC",
   "dependencies": {
     "cylon": "^1.3.0",
-    "cylon-api-mqtt": "^0.2.0",
     "cylon-api-socketio": "^0.4.0",
     "cylon-firmata": "^0.24.0",
     "cylon-gpio": "^0.30.1",
