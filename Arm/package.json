@@ -8,7 +8,8 @@
       "arm": "arm.js",
       "sensor": "sensor.js",
       "joint": "joint.js",
-      "pump": "pump.js"
+      "pump": "pump.js",
+      "easy": "easy.js"
     }
   },
   "scripts": {
@@ -23,6 +24,7 @@
     "cylon-firmata": "^0.24.0",
     "cylon-gpio": "^0.30.1",
     "cylon-i2c": "^0.26.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "tweeno": "^1.1.3"
   }
 }

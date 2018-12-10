@@ -1,0 +1,64 @@
+<script type="text/javascript">
+  RED.nodes.registerType('easy', {
+    category: '俺',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: "" },
+      graphic: {value: "TWEEN.Easing.Linear.None"}
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "easy.png",
+    label: function () {
+      return this.name || "easy";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="easy">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>name</label>
+    <input type="text" id="node-input-name" placeholder="200">
+  </div>
+  <div class="from-row">
+    <label for="node-input-graphic">Graphic</label>
+    <select id="node-input-graphic">
+      <option value="TWEEN.Easing.Linear.None">Linear.None</option>
+      <option value="TWEEN.Easing.Quadratic.In">Quadratic.In</option>
+      <option value="TWEEN.Easing.Quadratic.Out">Quadratic.Out</option>
+      <option value="TWEEN.Easing.Quadratic.InOut">Quadratic.InOut</option>
+      <option value="TWEEN.Easing.Cubic.In">Cubic.In</option>
+      <option value="TWEEN.Easing.Cubic.Out">Cubic.Out</option>
+      <option value="TWEEN.Easing.Cubic.InOut">Cubic.InOut</option>
+      <option value="TWEEN.Easing.Quartic.In">Quartic.In</option>
+      <option value="TWEEN.Easing.Quartic.Out">Quartic.Out</option>
+      <option value="TWEEN.Easing.Quartic.InOut">Quartic.InOut</option>
+      <option value="TWEEN.Easing.Quintic.In">Quintic.In</option>
+      <option value="TWEEN.Easing.Quintic.Out">Quintic.Out</option>
+      <option value="TWEEN.Easing.Quintic.InOut">Quintic.InOut</option>
+      <option value="TWEEN.Easing.Sinusoidal.In">Sinusoidal.In</option>
+      <option value="TWEEN.Easing.Sinusoidal.Out">Sinusoidal.Out</option>
+      <option value="TWEEN.Easing.Sinusoidal.InOut">Sinusoidal.InOut</option>
+      <option value="TWEEN.Easing.Exponential.In">Exponential.In</option>
+      <option value="TWEEN.Easing.Exponential.Out">Exponential.Out</option>
+      <option value="TWEEN.Easing.Exponential.InOut">Exponential.InOut</option>
+      <option value="TWEEN.Easing.Circular.In">Circular.In</option>
+      <option value="TWEEN.Easing.Circular.Out">Circular.Out</option>
+      <option value="TWEEN.Easing.Circular.InOut">Circular.InOut</option>
+      <option value="TWEEN.Easing.Elastic.In">Elastic.In</option>
+      <option value="TWEEN.Easing.Elastic.Out">Elastic.Out</option>
+      <option value="TWEEN.Easing.Elastic.InOut">Elastic.InOut</option>
+      <option value="TWEEN.Easing.Back.In">Back.In</option>
+      <option value="TWEEN.Easing.Back.Out">Back.Out</option>
+      <option value="TWEEN.Easing.Back.InOut">Back.InOut</option>
+      <option value="TWEEN.Easing.Bounce.In">Bounce.In</option>
+      <option value="TWEEN.Easing.Bounce.Out">Bounce.Out</option>
+      <option value="TWEEN.Easing.Bounce.InOut">Bounce.InOut</option>
+    </select>
+  </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="easy">
+  <p>根据所选方式产生连续数据, 避免跳跃间断, 缓和各种机械运动剧烈程度</p>
+</script>

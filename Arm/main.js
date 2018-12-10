@@ -3,8 +3,8 @@ var Cylon = require('cylon');
 Cylon.robot({
   name: '7bot',
   connections: {
-    arduino: { 
-      adaptor: 'firmata', port: '/dev/cu.usbmodem144301' 
+    arduino: {
+      adaptor: 'firmata', port: '/dev/cu.usbmodem144301'
     }
   },
 
@@ -26,37 +26,37 @@ Cylon.robot({
     pumpmotor: { driver: 'led', pin: 11 }
   },
 
-  work: function(my) {
-      this.joint0.angle(90);
-      this.joint1.angle(150);
-      this.joint2.angle(120);
-      this.joint3.angle(90);
-      this.joint4.angle(90);
-      this.joint5.angle(90);
-      this.pumpmotor.turnOff();
+  work: function (my) {
+    this.joint0.angle(90);
+    this.joint1.angle(150);
+    this.joint2.angle(120);
+    this.joint3.angle(90);
+    this.joint4.angle(90);
+    this.joint5.angle(90);
+    this.pumpmotor.turnOff();
   },
-  commands: function() {
+  commands: function () {
     return {
       turn_pump_on: this.turnPumpOn,
       turn_pump_off: this.turnPumpOff,
     };
   },
 
-  turnPumpOn: function() {
+  turnPumpOn: function () {
     this.pumpmotor.turnOn();
     this.pumpvalve.turnOff();
   },
 
-  turnPumpOff: function() {
+  turnPumpOff: function () {
     this.pumpmotor.turnOff();
     this.pumpvalve.turnOn();
   }
 });
 
 Cylon.api('socketio',
-{
-  host: '0.0.0.0',
-  port: '1998'
-});
+  {
+    host: '0.0.0.0',
+    port: '1998'
+  });
 
 Cylon.start();
